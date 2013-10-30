@@ -42,5 +42,21 @@ namespace MathodMan.UnitTests.Statistics
 
             AssertMore.EqualInTermsOfSet(expected, result);
         }
+
+        [Theory, ClassData(typeof(ModeClassDataDouble))]
+        public void Mode_VariousDoubleInputs_ReturnsMode(IEnumerable<double> data, IEnumerable<double> expected)
+        {
+            var result = Means.Mode(data);
+
+            AssertMore.EqualInTermsOfSet(expected, result);
+        }
+
+        [Theory, ClassData(typeof(ModeClassDataDecimal))]
+        public void Mode_VariousDecimalInputs_ReturnsMode(IEnumerable<decimal> data, IEnumerable<decimal> expected)
+        {
+            var result = Means.Mode(data);
+
+            AssertMore.EqualInTermsOfSet(expected, result);
+        }
     }
 }
