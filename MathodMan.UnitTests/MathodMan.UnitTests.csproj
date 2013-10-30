@@ -50,6 +50,7 @@
     <Compile Include="ClassDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics\MeansTests.cs" />
+    <Compile Include="Statistics\TheoryClassData\MedianClassData.cs" />
     <Compile Include="Statistics\TheoryClassData\ModeClassData.cs" />
   </ItemGroup>
   <ItemGroup>

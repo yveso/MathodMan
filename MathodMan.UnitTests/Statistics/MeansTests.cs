@@ -58,5 +58,47 @@ namespace MathodMan.UnitTests.Statistics
 
             AssertMore.EqualInTermsOfSet(expected, result);
         }
+
+        [Fact]
+        public void Median_DataIsNull_ThrowsArgumentNullException()
+        {
+            List<int> data = null;
+
+            Assert.Throws<ArgumentNullException>(
+                () => Means.Median(data));
+        }
+
+        [Fact]
+        public void Median_DataIsEmpty_ThrowsArgumentException()
+        {
+            var data = new List<int>();
+
+            Assert.Throws<ArgumentException>(
+                () => Means.Median(data));
+        }
+
+        [Theory, ClassData(typeof(MedianClassDataInt))]
+        public void Median_VariousIntInputs_ReturnsMedian(IEnumerable<int> data, double expected)
+        {
+            var result = Means.Median(data);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory, ClassData(typeof(MedianClassDataDouble))]
+        public void Median_VariousDoubleInputs_ReturnsMedian(IEnumerable<double> data, double expected)
+        {
+            var result = Means.Median(data);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory, ClassData(typeof(MedianClassDataDecimal))]
+        public void Median_VariousDecimalInputs_ReturnsMedian(IEnumerable<decimal> data, double expected)
+        {
+            var result = Means.Median(data);
+
+            Assert.Equal(expected, result);
+        }
     }
 }
