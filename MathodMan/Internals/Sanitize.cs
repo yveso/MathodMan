@@ -17,5 +17,13 @@ namespace MathodMan.Internals
                 throw new ArgumentException(name + " cannot be empty", name);
             }
         }
+
+        public static void EnsureTwoNumbersAreNotBothZero(int a, int b)
+        {
+            if (a == 0 && a == b)
+            {
+                throw new ArgumentException("The two Arguments must not be both zero");
+            }
+        }
     }
 }

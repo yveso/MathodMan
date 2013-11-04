@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arithmetics\ArithmeticTest.cs" />
     <Compile Include="AssertMore.cs" />
     <Compile Include="ClassDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
