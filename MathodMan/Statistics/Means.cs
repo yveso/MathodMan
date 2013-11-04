@@ -45,5 +45,35 @@ namespace MathodMan.Statistics
                 return (elementBelowMiddle + elementAboveMiddle) / 2;
             }
         }
+
+        public static double ArithmeticMean(IEnumerable<int> data)
+        {
+            Sanitize.EnsureDataIsNotNullOrEmpty(data, "data");
+
+            var sum = (double)data.Sum();
+            var count = data.Count();
+
+            return sum / count;
+        }
+
+        public static double ArithmeticMean(IEnumerable<decimal> data)
+        {
+            Sanitize.EnsureDataIsNotNullOrEmpty(data, "data");
+
+            var sum = (double)data.Sum();
+            var count = data.Count();
+
+            return sum / count;
+        }
+
+        public static double ArithmeticMean(IEnumerable<double> data)
+        {
+            Sanitize.EnsureDataIsNotNullOrEmpty(data, "data");
+
+            var sum = data.Sum();
+            var count = data.Count();
+
+            return sum / count;
+        }
     }
 }
