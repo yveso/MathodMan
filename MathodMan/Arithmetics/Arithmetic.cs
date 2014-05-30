@@ -24,19 +24,19 @@ namespace MathodMan.Arithmetics
                 return Math.Max(Math.Abs(a), Math.Abs(b));
             }
 
-            int nominator = a;
+            int numerator = a;
             int denominator = b;
             int leftOver;
 
             do
             {
-                leftOver = nominator % denominator;
+                leftOver = numerator % denominator;
 
-                nominator = denominator;
+                numerator = denominator;
                 denominator = leftOver;
             } while (leftOver != 0);
 
-            return nominator;
+            return numerator;
         }
 
         public static int LeastCommonMultiple(int a, int b)
